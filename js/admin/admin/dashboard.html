@@ -1,0 +1,14 @@
+<h2>Manage Products</h2>
+<input id="pname" placeholder="Product Name">
+<input id="pprice" placeholder="Price in GHS" type="number">
+<input id="pimage" placeholder="Image path e.g images/wig2.jpg">
+<button onclick="addProduct()">Add Product</button>
+<div id="admin-list"></div>
+
+<script src="../js/admin.js"></script>
+<script>
+// SECURITY CHECK
+if(sessionStorage.getItem('isAdmin') !== 'true'){
+  window.location.href='login.html';
+}
+</script>
