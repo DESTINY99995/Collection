@@ -1,0 +1,17 @@
+<form onsubmit="adminLogin(event)">
+  <h2>DESTINY Admin Login</h2>
+  <input id="admin-pass" type="password" placeholder="Admin Password">
+  <button>Login</button>
+</form>
+<script>
+// PLACE YOUR SECURE PASSWORD HASH HERE
+// This is not 100% secure for frontend only. For real security, use option B below.
+const ADMIN_PASSWORD = "DESTINY2026!"; // Change this
+function adminLogin(e){
+  e.preventDefault();
+  if(document.getElementById('admin-pass').value === ADMIN_PASSWORD){
+    sessionStorage.setItem('isAdmin','true');
+    window.location.href='dashboard.html';
+  } else { alert("Wrong password"); }
+}
+</script>
